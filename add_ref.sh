@@ -11,6 +11,8 @@ if [ $1 ]
 			then
 				# Get the bibtex page, just awk out from the source the bibtex stuff we want and append.
 				wget -q -O - "https://inspirehep.net/record/$recid/export/hx" | awk '/^\@article{/,/^}/' >> refs.bib
+				# Print the label so it can be copy-pasted without checking refs.bib
+				cat refs.bib | grep "@article" | tail -1 | sed s'/@article{//' | sed s'/,$//'
 				# Note: This does not support book or any other type.
 			else
 				echo "Something when wrong with the arxiv id you entered, it did not return one ID."
