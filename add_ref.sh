@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script adds a reference to refs.bib given the first argument is a valid arxiv-id.
+# This script adds a reference to refs.bib given that the first argument is a valid arxiv-id.
 
 if [ $1 ]
 	then
