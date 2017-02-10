@@ -4,7 +4,7 @@
 
 if [ $1 ]
 	then
-		# Find recid from arxiv id
+		# Find recid from arxiv id.
 		recid=`wget -q -O - "https://inspirehep.net/search?p=$1&of=recjson&ot=recid" | grep -Eo '[0-9]{1,10}'`
 		# Check if the output is just one word.
 		if [ `echo $recid | wc -w` -eq 1 ]
